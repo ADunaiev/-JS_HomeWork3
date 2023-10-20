@@ -9,6 +9,16 @@ function showTextBtnClicked(e) {
 
     e.preventDefault();
 
+
+    const myResult = document.getElementById('my-result');
+    if (!myResult) throw "Can't find 'my-result'";
+
+    var textHTML = "";
+    textHTML += "<div class='col s12'><div class='card grey lighten-5'><div class='card-content'>";
+    textHTML += "<span class='card-title'>Result:</span><p id='my-text'></p></div></div></div>";
+
+    myResult.innerHTML = textHTML;
+
     const myText = document.getElementById('my-text');
     if (!myText) throw "Can't find 'my-text'";
 
