@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task4</title>
     <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 </head>
 <nav>
@@ -25,12 +27,132 @@
 
         <h1 class="center-align">Task4</h1>
 
+        <div class="row">
+          <div class="col s12">
+            <img src="Знімок екрана 2023-10-21 002207.png" alt="task4" class="responsive-img">
+          </div>
+        </div>
+
+        <h2 class="center-align">My Solution</h2>
+
+        <!--books-->
+        <div class="row" id="books-display">
+
+          <!--
+          <div class="col s3">
+            <div class="card medium grey lighten-5">
+              <div class="card-content">
+                <img src="learningJS.jpg" alt="book1" class="responsive-img">
+                <span>Learning JavaScript: JavaScript Essentials for Modern Application</span><br>
+                <span style="font-size: small;">Ethan Brown</span>
+                <span class="new badge" data-badge-caption=""><b>16$</b></span>
+              </div>
+              <div class="card-action">
+                <button type="submit" class="btn" id="book1-btn">Select</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s3">
+            <div class="card medium grey lighten-5">
+              <div class="card-content">
+                <img src="scopAndClosures.jpg" alt="book2" class="responsive-img">
+                <span>You Don't Know JS Yet: Scope & Closures</span><br>
+                <span style="font-size: small;">Kyle Simpson</span>
+                <span class="new badge" data-badge-caption=""><b>20$</b></span>
+              </div>
+              <div class="card-action">
+                <button type="submit" class="btn">Select</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s3">
+            <div class="card medium grey lighten-5">
+              <div class="card-content">
+                <img src="JSandJQuery.jpg" alt="book3" class="responsive-img">
+                <span>JavaScript and jQuery: Interactive Front-End Web Development</span><br>
+                <span style="font-size: small;">Jon Duckett</span>
+                <span class="new badge" data-badge-caption=""><b>22$</b></span>
+              </div>
+              <div class="card-action">
+                <button type="submit" class="btn">Select</button>
+              </div>
+            </div>
+          </div>
+          -->
+
+        </div>
+
+        <!--form-->
+        <div class="row">
+
+          <form class="col s12">
+
+            <div class="row">
+
+              <div class="col s12">
+                <span style="font-weight: 100; font-size: small;">Book</span>
+                <div class="chip" id="book-name">
+                </div>
+              </div>
+
+            </div>
+
+            <div class="row">
+
+              <div class="input-field col s12">
+                <input type="text" id="book-quantity" class="validate">
+                <label for="book-quantity">Quantity</label>
+              </div>
+
+            </div>
+
+            <div class="row">
+              <div class="input-field col s12">
+                <input type="text" id="user-name" class="validate">
+                <label for="user-name">Name</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col s12">
+                <textarea id="user-address" class="materialize-textarea"></textarea>
+                <label for="user-address">Delivery address</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col s6">
+                <input type="date" id="delivery-date" class="datepicker">
+                <label for="delivery-date">Delivery date</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col s12">
+                <textarea id="user-comment" class="materialize-textarea"></textarea>
+                <label for="user-comment">Comment</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col s12 right-align">
+                <button type="submit" id="buy-btn" class="btn waves-effect waves-light">
+                  Buy
+                  <i class="material-icons left">shopping_cart</i>
+                </button>
+              </div>
+            </div>
+
+          </form>
+        </div>
+
+        <div class="row" id="result-div">
+
+        </div>
+
     </div>
-
-
-
-
-
 
      <!-- Compiled and minified JavaScript -->
      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
