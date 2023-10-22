@@ -19,10 +19,10 @@ const books = [
         price: '22$',
     },
     {
-        source: "JSandJQuery.jpg",
-        name: 'JavaScript and jQuery: Interactive Front-End Web Development',
-        author: 'Jon Duckett',
-        price: '22$',
+        source: "мама.jpg",
+        name: 'Як навчитися говорити - Добре, Мамо',
+        author: 'Тато Андрій',
+        price: '100$',
     },
 
 ]
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
         tempHTML += books[i].name;
         tempHTML += "</span><br><span style='font-size: small;'>";
         tempHTML += books[i].author;
-        tempHTML += "</span><span class='new badge'><b>";
+        tempHTML += "</span><span class='badge'><b>";
         tempHTML += books[i].price;
         tempHTML += "</b></span></div><div class='card-action'><button type='submit' class='btn' name='book-btn'>Select</button></div></div></div>";
 
