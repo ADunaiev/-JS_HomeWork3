@@ -67,17 +67,90 @@ document.addEventListener('DOMContentLoaded', function() {
     // activation of bookings button
     const bookingsBtn = document.getElementById('bookings-btn');
     if(!bookingsBtn) throw "Can't find id 'bookings-btn'";
-    searchBtn.addEventListener('click', bookingsBtnClicked);
+    bookingsBtn.addEventListener('click', bookingsBtnClicked);
 
 });
 
 function bookingsBtnClicked(e) {
     e.preventDefault();
+
+    // finding bookings-div
+    const bookingsDiv = document.getElementById('bookings-div');
+    if(!bookingsDiv) throw "Can't find id 'bookings-div'";
+
+    var tempNumber = 0;
+    let ticketsInBooking = 0;
+    let firstTicketInBooking = 0;
+    let textHTML = "";
+    textHTML += "<div class='col s12'><ul class='collapsible popout'>";
+
+   console.log("bookings.length = " + parseInt(bookings.length));
+
+    for(let i=0; i < parseInt(bookings.length); i++) {
+
+        if (parseInt(bookings[i].booking) > parseInt(tempNumber)) {
+            console.log("enter if");
+            textHTML += "<li><div class='collapsible-header'><table><tbody><tr><td><span>бронювання ";
+            textHTML += bookings[i].booking;
+            textHTML += "</span></td><td><span>";
+            textHTML += bookings[i].direction;
+            textHTML += "</span></td><td><span>30.10.23</span></td><td><span>";
+            ticketsInBooking = bookings.filter((b) => b.booking == bookings[i].booking).length;
+            firstTicketInBooking = i;
+            textHTML += ticketsInBooking;
+            textHTML += " квітка</span></td></tr></tbody></table></div><div class='collapsible-body'><table><tbody>";
+    
+            textHTML += "<tr><td><span>бронювання ";
+            textHTML += bookings[i].booking;
+            textHTML += "</span></td><td><span>";
+            textHTML += bookings[i].direction;
+            textHTML += "</span></td><td><span>";
+            textHTML += bookings[i].date;
+            textHTML += "</span></td><td><span>місце ";
+            textHTML += bookings[i].seat;
+            textHTML += "</span></td></tr>";
+            tempNumber++;
+
+            if ((i - firstTicketInBooking + 1) == ticketsInBooking) {
+                textHTML += "</tbody></table></div></li>";
+            }
+        } else {
+            console.log("enterElse");
+            textHTML += "<tr><td><span>бронювання ";
+            textHTML += bookings[i].booking;
+            textHTML += "</span></td><td><span>";
+            textHTML += bookings[i].direction;
+            textHTML += "</span></td><td><span>";
+            textHTML += bookings[i].date;
+            textHTML += "</span></td><td><span>місце ";
+            textHTML += bookings[i].seat;
+            textHTML += "</span></td></tr>";
+
+            if ((i - firstTicketInBooking + 1) == ticketsInBooking) {
+                textHTML += "</tbody></table></div></li>";
+            }
+        }
+
+        
+    }
+
+    textHTML += "</ul></div>";
+    bookingsDiv.innerHTML = textHTML;
+
+    // Matrialize collapsible
+    var elems = document.querySelectorAll('.collapsible');
+    var instances = M.Collapsible.init(elems);
+
 }
 
 function searchBtnClicked(e) {
     e.preventDefault();
     ticketsPrice = 0;
+
+    // finding bookings-div
+    const bookingsDiv = document.getElementById('bookings-div');
+    if(!bookingsDiv) throw "Can't find id 'bookings-div'";
+    bookingsDiv.innerHTML = "";
 
     // finding result-div
     const resultDiv = document.getElementById('result-div');
@@ -215,38 +288,3 @@ function seatCheckboxClicked(e) {
         ticketsPriceInfo.innerText = ticketsPrice;
 }
 
-/*
-          <div class="col s12">
-            <ul class="collapsible popout">
-
-              <li>
-                <div class="collapsible-header">
-                  <table>
-                    <tbody>
-                      <tr>
-                        <td><span>бронювання 1</span></td>
-                        <td><span>Одеса-Харьків</span></td>
-                        <td><span>30.10.23</span></td>
-                        <td><span>2 квітка</span></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <div class="collapsible-body">
-                  <p>
-                    <table>
-                      <tbody>
-                        <tr>
-                          <td><span>бронювання 1</span></td>
-                          <td><span>Одеса-Харьків</span></td>
-                          <td><span>30.10.23</span></td>
-                          <td><span>місце 1</span></td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </p>
-                </div>
-              </li>
-            </ul>
-          </div>
-          */
