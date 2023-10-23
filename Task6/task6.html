@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task6</title>
     <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-</head>
+    <link rel="stylesheet" href="style.css">
+  </head>
 <nav>
     <div class="nav-wrapper">
       <a href="#" class="brand-logo">HomeWork3</a>
@@ -33,11 +36,82 @@
 
         <h2 class="center-align">My Solution</h2>
 
+
+        <!-- starting design of page  --> 
+        <div class="row grey lighten-4 valign-wrapper">
+
+            <div class="col s4 input-field">
+              <select id="direction-select">
+
+              </select>
+              <label for="direction-select">Direction select</label>
+            </div>
+
+            <div class="col s3 input-field">
+              <input type="text" id="date-input" class="datepicker">
+              <label for="date-input">Choose date</label>
+            </div>
+
+            <div class="col s3 center-align">
+              <button type="submit" id="search-btn" class="btn waves-effect waves-light">
+                <i class="material-icons left">search</i>
+                search
+              </button>
+            </div>
+
+            <div class="col s2 center-align">
+              <button type="submit" id="bookings-btn" class="btn waves-effect waves-light">
+                bookings
+              </button>
+            </div>
+
+        </div>
+
+
+        <!-- seat choosing form design -->
+        <div class="row grey lighten-4 valign-wrapper" id="result-div">
+        </div>
+
+        <!-- bookings info -->
+        <div class="row grey lighten-4 valign-wrapper" id="bookings-div">
+
+          <div class="col s12">
+            <ul class="collapsible popout">
+
+              <li>
+                <div class="collapsible-header">
+                  <table>
+                    <tbody>
+                      <tr>
+                        <td><span>бронювання 1</span></td>
+                        <td><span>Одеса-Харьків</span></td>
+                        <td><span>30.10.23</span></td>
+                        <td><span>2 квітка</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="collapsible-body">
+                  <p>
+                    <table>
+                      <tbody>
+                        <tr>
+                          <td><span>бронювання 1</span></td>
+                          <td><span>Одеса-Харьків</span></td>
+                          <td><span>30.10.23</span></td>
+                          <td><span>місце 1</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
     </div>
-
-
-
-
 
 
      <!-- Compiled and minified JavaScript -->

@@ -1,0 +1,43 @@
+/*
+body .container .row .col tbody tr td label span {
+    padding-left: 25px;
+}
+
+body .container .row .col tbody tr td {
+    padding: 15px 0px;
+    max-width: 40px !important;
+}*/
+
+body .container .row .col .coupe .seat label span {
+    padding-left: 22px;
+}
+
+.coupe {
+
+    display: inline-flex;
+    flex-wrap: wrap;
+    margin-right: 5px;
+    width: 100px;
+    padding: 0px;
+}
+
+.seat {
+    border: 1px solid grey;
+    justify-content: space-between;
+    color: blue;
+    padding: 0 8px;
+    width: 50px;
+}
+
+.row {
+    &.flexbox {
+          display: flex;
+          flex-wrap: wrap;
+      .col {
+              display: flex;
+              flex-direction: row;
+              /*.card, 
+              .card-panel {flex: 1;}*/
+      }
+    }
+  }
